@@ -10,12 +10,13 @@ $(function() {
       //var sliderWidth = 2880;
       //var sliderHeight = 1536;
       var sliderWidth = 1440;
-      var sliderHeight = 768;
+      //var sliderHeight = 768;
+      var sliderHeight = 1100;
 
       //renderer = PIXI.autoDetectRenderer(
-      renderer = new PIXI.WebGLRenderer(
+      //renderer = new PIXI.WebGLRenderer(
       //renderer = new PIXI.CanvasRenderer(
-      //renderer = PIXI.WebGLRenderer(
+      renderer = PIXI.WebGLRenderer(
         sliderWidth,
         sliderHeight,
         //{transparent: true},
@@ -24,9 +25,9 @@ $(function() {
       //var farTexture = PIXI.Texture.fromImage("img/slider/bg-far.png");
       //var farTexture = PIXI.Texture.fromImage("img/slider/screenshots_1440.png");
       //var farTexture = PIXI.Texture.fromImage("img/slider/bg-far1440.png");
-      //var farTexture = PIXI.Texture.fromImage("img/slider/screenshots_1440.png");
+      var farTexture = PIXI.Texture.fromImage("img/slider/screenshots_1440.png");
       //var farTexture = PIXI.Texture.fromImage("img/slider/slider-6.png");
-      var farTexture = PIXI.Texture.fromImage("img/slider/slider-7_1440-736.png");
+      //var farTexture = PIXI.Texture.fromImage("img/slider/slider-7_1440-736.png");
       //far = new PIXI.Sprite(farTexture);
       far = new PIXI.extras.TilingSprite(farTexture, sliderWidth, sliderHeight)
       far.position.x = 0;
@@ -36,8 +37,8 @@ $(function() {
       stage.addChild(far);
       
       //renderer.render(stage);
-      //renderer.backgroundColor = 0xFFFFFF;
-      //renderer.transparent = true;
+      renderer.backgroundColor = 0xFFFFFF;
+      renderer.transparent = true;
       renderer.resolution = 1;
       //renderer.autoResize = true;
       renderer.roundPixels = true;
@@ -46,7 +47,7 @@ $(function() {
 
       function update() {
         //far.position.x -= 0.128;
-        far.tilePosition.x -= 1;
+        far.tilePosition.x -= 0.2;
         //far.tilePosition.y -= 1;
         renderer.render(stage);
         //console.log(renderer);
